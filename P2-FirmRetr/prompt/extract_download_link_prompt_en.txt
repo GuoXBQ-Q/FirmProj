@@ -1,0 +1,50 @@
+Your task is to accurately detect and extract download links from HTTP response content. You will receive input in the following format:  
+
+<INPUT>  
+Request url: <url>  
+Response: <response>  
+</INPUT>  
+Where `Response` is the HTTP response content.  
+
+Please strictly adhere to the following processing rules:  
+1. **Explicit Link Detection**:  
+   - Traverse all levels of field values in the response content.  
+   - Identify complete URLs starting with `http://` or `https://`.  
+   - Include, but not limited to, fields with names containing `"url"`, `"link"`, `"download"`, or `"path"`.  
+
+2. **Filename Handling**:  
+   - Identify filenames containing extensions (e.g., `.bin`, `.zip`, `.json`, `.xml`).  
+   - Extract the `baseurl` from the request address.  
+
+3. **Concatenation Rules**:  
+   - If the filename starts with `/`, concatenate directly: `baseurl + filename`.  
+   - If the filename does not start with `/`, automatically add a slash: `baseurl + "/" + filename`.  
+
+4. **Merge and Deduplicate**:  
+   - Combine all detected links and generated links.  
+   - Remove duplicates while preserving the original order of appearance.  
+
+Output Format Requirements:  
+- The final result must be represented in Python list format.  
+- Each element should be a complete URL string.  
+- Return an empty list `[]` if no links are found.  
+- Do not include any explanatory text.
+
+Examples:
+- example input 1:
+Request url: http://bo.ruochanit.com:6088/v1/versioninfos
+Response: {'status_code': 200, 'content': {'must': 1, '_id': '5bea4a4912090b4a5c4d7f0e', '__v': 0, 'ccode': 'abcd', 'downloadlink': 'http://api.ruochanit.com:6090/v1/files/vendorclient_stable.zip', 'remark': '0e0854005b101d077f18dea938b6d5a9', 'version': '1.0.50', 'name': 'vendorclient', 'system': 'liunx', 'description': '修复部分已知bug', 'type': '3'}}
+- example output 1:
+['http://api.ruochanit.com:6090/v1/files/vendorclient_stable.zip']
+
+- example input 2:
+Request url: http://bo.ruochanit.com:6088/v1/versioninfos
+Response: {'error': 'HTTP Error 500', 'status_code': 500, 'content': '<h1>Cannot read property &#39;constructor&#39; of undefined</h1>\n<h2></h2>\n<pre></pre>\n'}
+- example output 2:
+[]
+
+- example input 3:
+Request url: http://avpro.global.yamaha.com/hpep/Relidx_Yamaha_EP-E30A.json
+Response: {"header": {"model": "EP-E30A","date": "2019-11-25-T00:00:00+09:00","copyright": "Copyright Yamaha Corporation. All rights reserved."},"release": {"0100": {"firmware": "Yamaha_EP-E30A_0100.bin","relnote": "Relnote_Yamaha_EP-E30A_0100.json"} }}
+- example output 3:
+['http://avpro.global.yamaha.com/hpep/Yamaha_EP-E30A_0100.bin','http://avpro.global.yamaha.com/hpep/Relnote_Yamaha_EP-E30A_0100.json']

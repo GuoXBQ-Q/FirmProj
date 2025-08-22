@@ -1,0 +1,246 @@
+作为物联网App静态分析专家，你需要分析静态分析程序输出的JSON格式网络请求构造内容，判断其与固件更新的相关性并进行分类。
+请严格按以下流程处理：
+
+<输入内容>
+{{JSON_DATA}}
+</输出内容>
+输入内容包含了可能的http请求中的元素(url，body，header，converter等)。其中一些字段没有具体值，表示为dynamic或null
+
+# 分析处理流程:
+1.方法名验证阶段：
+- 仔细检查Request Method Sig字段的方法名
+- 若方法名为updateAliasName/updateWeightData等非固件更新相关名称，立即返回3
+
+2.字段完整性检查：
+- 检查url/path/headers/body等字段的取值状态
+- 接受包含简单函数调用（如encode(utf-8)）的字段视为有效值
+- dynamic/null标记字段视为缺失值
+
+3.分类逻辑
+[0类] 满足以下任一条件：
+- URL包含文件后缀（.bin/.json等）
+- 所有字段均有明确的、可用于判断与固件更新相关的实际有效信息值
+
+[1类] 缺失字段属于应用层信息：
+- 包含token/usercode/appversion/timezone/language等运行时环境参数
+- 用户相关信息
+
+[2类] 缺失字段属于设备端信息：
+- 包含devicecode/deviceid/deviceVersion/wifi芯片型号等设备存储内容
+
+[3类] 满足以下任一条件: 
+- 与固件升级/更新,获取设备信息无关的内容(如appupdate、updatename、group、updateWeight等)
+- 缺少url字段或url字段缺少必要内容
+- 方法名验证不通过
+- “Possible Url”字段中的链接不完整且无法明确与固件更新相关
+
+# 注意事项
+- 
+
+
+# 输出要求
+- 仅返回最终分类数字(0/1/2/3)
+- 不添加额外语义内容。
+
+
+# 参考示例
+- 示例输入1:
+{"Possible Url": {"url": "http://avpro.global.yamaha.com/hpep/", "path": [ "Relidx_Yamaha_EP-E30A.json","Relidx_Yamaha_EP-E50A.json","Relidx_Yamaha_EP-E70A.json", "Relidx_Yamaha_EP-ES50A.json", "Relidx_Yamaha_TW-E3A.json",  "Relidx_Yamaha_TW-E3B.json", "Relidx_Yamaha_TW-E3BY.json", "Relidx_Yamaha_TW-E5A.json", "Relidx_Yamaha_TW-E7A.json",  "Relidx_Yamaha_TW-ES5A.json", "Relidx_Yamaha_YH-E500A.json", "Relidx_Yamaha_YH-E700A.json","Relidx_Yamaha_YH-L700A.json" ] }
+    }
+- 示例输出1:
+0
+
+- 示例输入2:
+{
+    "Request Method Sig": "java.lang.Object checkFirmwareUpdate(kotlin.coroutines.Continuation)",
+    "url": {
+        "base_url": "https://apps.ledvanceus.com/firmware/ble/pd/",
+        "path": "mesh.txt"
+    },
+    "method": "GET",
+    "headers": {},
+    "body": {},
+    "converter": {}
+}
+- 示例输出2:
+0
+
+- 示例输入3:
+{
+    "Request Method Sig": "retrofit2.Call checkVersion(java.lang.String,java.lang.String)",
+    "url": {
+        "base_url": "http://bo.ruochanit.com:9139/",
+        "path": "/v1/versioninfos"
+    },
+    "method": "GET",
+    "headers": {
+        "baseUrl": "http://bo.ruochanit.com:6088/"
+    },
+    "param": {
+        "name": [
+            "<dynamic from UpgradeFirmwareActivity manualVersionType>",
+            "AndroidDeviceConfigDebug",
+            "<dynamic from BlueDataUtils getStringFromByte(byte[])>"
+        ]
+    },
+    "body": {},
+    "converter": {}
+}
+- 示例输出3:
+0
+
+- 示例输入4:
+{
+    "Request Method Sig": "void sendGetLatestFwInfo(java.lang.String,int,java.lang.String,int,java.lang.String,com.mvvm.MvvmRequestCallback)",
+    "url": {
+        "base_url_options": [
+            "https://www.iotdreamcatcher.net.cn"
+        ],
+        "path": "/v2/user/device/latest/fwinfo"
+    },
+    "method": "GET",
+    "headers": {
+        "Token": "null",
+        "Appversion": "[\"\", <dynamic from versionName>]",
+        "Platform": "android",
+        "Lang": "[en, \"en\"]",
+        "Brand": "[jiachao, dreamcatcher]"
+    },
+    "body": {
+        "token": "<dynamic from getValue(android.content.Context,java.lang.String,java.lang.String)>",
+        "pid": "0",
+        "chipname": "mcu"
+    },
+    "converter": {}
+}
+- 示例输出4:
+1
+
+- 示例输入5:
+{
+    "Request Method Sig": "void getNewVersion(java.lang.String)",
+    "url": {
+        "base_url": "https://app.login.yunyis.com",
+        "path": "/g_version_match.php"
+    },
+    "method": "POST",
+    "body": {
+        "AppCom": "<dynamic from encryption>",
+        "SolCom": "<dynamic from encryption>",
+        "ReleaseTime": "<dynamic from encryption>",
+        "HDVersion": "<dynamic from encryption>"
+    },
+    "headers": {
+        "Content-Type": "application/octet-stream"
+    },
+    "converter": {
+        "function_calls": [
+            {
+                "function_name": "encryption",
+                "parameters": [
+                    "<dynamic>",
+                    "Goolink2014"
+                ]
+            }
+        ]
+    }
+}
+- 示例输出5:
+2
+
+- 示例输入6:
+{
+    "Possible Url": {
+        "url_face_check": "https://neye3c.yunyis.com:8080/api/buy/facerecognition?info="
+    }
+}
+- 示例输出6:
+3
+
+- 示例输入7:
+{
+    "Possible Url": {
+        "st_auth_pwd_change_url": "http://v3.goolink.org/v3_sto_upedit.php"
+    }
+}
+- 示例输出7:
+3
+
+- 示例输入8:
+{
+    "Request Method Sig": "retrofit2.Call updateAliasName(java.lang.String,java.lang.String)",
+    "url": {
+        "base_url": "https://app.pethin.com",
+        "path": "/app/user-info/updateAliasName"
+    },
+    "method": "POST",
+    "headers": {
+        "headInfo": {
+            "userCode": [
+                "<dynamic>",
+                "<dynamic>",
+                "0000",
+                "1111",
+                "hle_homelink"
+            ],
+            "version": [
+                "4.3.1"
+            ],
+            "apiName": "",
+            "language": "<dynamic>",
+            "client": "android",
+            "timeZone": "<dynamic>",
+            "odmId": [
+                "36ed7e5ae9a442418bfe5acc42fcaf4"
+            ],
+            "deviceCode": "test",
+            "time": "(currentTimeMills)1724840493975",
+            "token": "<dynamic>"
+        }
+    },
+    "body": {
+        "userCode": "<dynamic>",
+        "aliasName": "<dynamic>"
+    },
+    "param": {},
+    "converter": {}
+}
+- 示例输出8:
+3
+
+- 示例输入9:
+{
+    "Request Method Sig": "java.lang.Object updateWeightData(com.liesheng.haylou.ui.fatweight.data.WeightUploadEntity,kotlin.coroutines.Continuation)",
+    "url": {
+        "base_url": [
+            "http://morefitapphk.haylou.com/",
+            "http://47.106.169.162:18907/",
+            "http://morefitappcn.haylou.com/",
+            "https://morefitapphk.haylou.com/",
+            "https://morefitappcn.haylou.com/"
+        ],
+        "path": "/app/fat/weight/update"
+    },
+    "method": "POST",
+    "headers": {
+        "appId": "NADAL",
+        "appVersion": "<dynamic from getAppVersionName()>",
+        "appCode": "<dynamic from getAppVersionCode()>",
+        "timeZone": "<dynamic from getTimeZone()>",
+        "versionNo": "<dynamic from getAppVersionName()>",
+        "oemId": "NADAL",
+        "model": "<dynamic from getModel()>",
+        "brand": "<dynamic from getBrand()>",
+        "accessToken": "<dynamic from getToken()>",
+        "deviceType": "<dynamic from getDeviceType()>",
+        "versionBranch": "<dynamic from getVersionBranch()>",
+        "lang": "[tw, en]"
+    },
+    "body": {
+        "<com.liesheng.haylou.ui.fatweight.api.FatWeightRepository$updateMemberWeightData$2: com.liesheng.haylou.ui.fatweight.data.WeightUploadEntity $weight>": {}
+    },
+    "param": {},
+    "converter": {}
+}
+- 示例输出9:
+3

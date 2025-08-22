@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="error">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%t] %-5level %logger{36} - %msg%n}"/>
+        </Console>
+        <File name="warnLog" fileName="logs/warn.log">
+            <LevelRangeFilter minLevel="WARN" maxLevel="WARN" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="errorLog" fileName="logs/error.log">
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="infoLog" fileName="logs/info.log">
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+        <File name="debugLog" fileName="logs/debug.log">
+            <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="[%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="soot.jimple.infoflow.android.resources" level="error"/>
+        <Logger name="soot.jimple.infoflow.android.entryPointCreators.components.ActivityEntryPointCreator" level="error"/>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+           <!-- <AppenderRef ref="infoLog"/>
+            <AppenderRef ref="warnLog"/>
+            <AppenderRef ref="errorLog"/>
+            <AppenderRef ref="debugLog"/> -->
+        </Root>
+    </Loggers>
+</Configuration>

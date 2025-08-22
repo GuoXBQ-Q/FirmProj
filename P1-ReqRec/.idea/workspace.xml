@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="FirmProj.main:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d2943ecc-0ccc-4a62-9192-6d7a30dda41a" name="Changes" comment="8-28/ V1.0">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/FirmProj_main_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/firmproj/utility/TimeoutTaskExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/base/MethodLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/base/MethodLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/base/MethodParamInvoke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/base/MethodParamInvoke.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/base/MethodString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/base/MethodString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/client/HttpClientFind.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/client/HttpClientFind.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/objectSim/StringClz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/objectSim/StringClz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/utility/BlockGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/utility/FileUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/utility/FileUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/utility/QueryJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/firmproj/utility/QueryJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/utility/TimeWatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/firmproj/utility/UrlInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+    </list>
+    <list id="28af94af-eb16-46e5-bd45-48575d194720" name="New changelist" comment="New changelist" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FirmProj" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FirmProj" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FirmProj" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FirmProj" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/joer1396815519/FirmProj.git&quot;,
+    &quot;accountId&quot;: &quot;6f6ef85e-9403-4b80-b3b3-76407d3df69c&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/firmproj/base/MethodString.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/firmproj/base/RetrofitPoint.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/firmproj/base/StmtPoint.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/firmproj/graph/CallGraph.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/firmproj/main/Main.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2hDMLqyHmRFvFR7vGiZrtXJDTlv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.javaAPp.executor": "Debug",
+    "Gradle.Build FirmProj.executor": "Run",
+    "Gradle.FirmProj [:Main.main()].executor": "Debug",
+    "Gradle.FirmProj [clean].executor": "Run",
+    "Gradle.FirmProj [jar].executor": "Run",
+    "Java Scratch.Java.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ToolWindowStatistic.ShowToolbar": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/data/wenzhi/FirmProj/src/main/resources/log4j2.xml",
+    "onboarding.tips.debug.path": "D:/BaiduSyncdisk/Iot/FirmProj/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15384616",
+    "project.structure.side.proportion": "0.20683454",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="firmproj.objectSim" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/gradle/wrapper" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="firmproj.objectSim" />
+      <recent name="FirmProj.base" />
+      <recent name="FirmProj.graph" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.FirmProj [jar]">
+    <configuration name="javaAPp" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <classpathModifications>
+        <entry path="$PROJECT_DIR$/src" />
+      </classpathModifications>
+      <output_file path="$PROJECT_DIR$/logs/1.log" />
+      <option name="MAIN_CLASS_NAME" value="firmproj.main.Main" />
+      <module name="FirmProj.main" />
+      <option name="PROGRAM_PARAMETERS" value="-p libs/android.jar -o results/ -a $PROJECT_DIR$/../APKS/yandex.apk -dj libs/dex_tools_2.1/d2j-dex2jar.sh" />
+      <option name="VM_PARAMETERS" value="-Xmx819200m" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirmProj [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="FirmProj [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.javaAPp" />
+      <item itemvalue="Gradle.FirmProj [clean]" />
+      <item itemvalue="Gradle.FirmProj [jar]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.FirmProj [jar]" />
+        <item itemvalue="Gradle.FirmProj [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2943ecc-0ccc-4a62-9192-6d7a30dda41a" name="Changes" comment="" />
+      <changelist id="28af94af-eb16-46e5-bd45-48575d194720" name="New changelist" comment="" />
+      <created>1717124143372</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1717124143372</updated>
+    </task>
+    <task id="LOCAL-00001" summary="New changelist">
+      <option name="closed" value="true" />
+      <created>1717490381743</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717490381743</updated>
+    </task>
+    <task id="LOCAL-00002" summary="GET ALL field string map to Method">
+      <option name="closed" value="true" />
+      <created>1717563875694</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717563875694</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add recursion">
+      <option name="closed" value="true" />
+      <created>1717576490062</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717576490062</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add MethodString">
+      <option name="closed" value="true" />
+      <created>1718073434088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718073434089</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add MethodString">
+      <option name="closed" value="true" />
+      <created>1718263621808</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1718263621808</updated>
+    </task>
+    <task id="LOCAL-00006" summary="MethodLocal">
+      <option name="closed" value="true" />
+      <created>1718279436648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1718279436648</updated>
+    </task>
+    <task id="LOCAL-00007" summary="MethodLocal incomplete">
+      <option name="closed" value="true" />
+      <created>1718371379937</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1718371379937</updated>
+    </task>
+    <task id="LOCAL-00008" summary="new client, more Methodlocal">
+      <option name="closed" value="true" />
+      <created>1719488118909</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719488118909</updated>
+    </task>
+    <task id="LOCAL-00009" summary="new RetrofitbuildPoint">
+      <option name="closed" value="true" />
+      <created>1719571329836</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719571329836</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Method Set Field AND the Constant To Filed transfer.">
+      <option name="closed" value="true" />
+      <created>1719911202022</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719911202023</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add Interceptor and OKHttpClient find.">
+      <option name="closed" value="true" />
+      <created>1720661766558</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720661766558</updated>
+    </task>
+    <task id="LOCAL-00012" summary="add converterFactory and queryJson">
+      <option name="closed" value="true" />
+      <created>1721180199302</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721180199302</updated>
+    </task>
+    <task id="LOCAL-00013" summary="add invokeSetField and cache find and callback">
+      <option name="closed" value="true" />
+      <created>1721961090282</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721961090282</updated>
+    </task>
+    <task id="LOCAL-00014" summary="add LLM Query, more invoke, and others">
+      <option name="closed" value="true" />
+      <created>1722589947173</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1722589947173</updated>
+    </task>
+    <task id="LOCAL-00015" summary="cancel some comment line">
+      <option name="closed" value="true" />
+      <created>1722590147878</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1722590147878</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add simple return url, add static field,  change arrayRef, add localToClz to methodString, change methodLocal getInvokeValues, and so on">
+      <option name="closed" value="true" />
+      <created>1722862475747</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1722862475747</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add methodReturnParamInvoke, retrieve field's value in methodParamInvoke. add url client/clz identify, fix getinvokeExprValues bug.">
+      <option name="closed" value="true" />
+      <created>1722956576412</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1722956576412</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix arrayRef param transfer, complete the paramInvoke Transfer.">
+      <option name="closed" value="true" />
+      <created>1723050596130</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1723050596130</updated>
+    </task>
+    <task id="LOCAL-00019" summary="fix bugs, change the param's string, &#10;optimize the list string">
+      <option name="closed" value="true" />
+      <created>1723125624701</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1723125624701</updated>
+    </task>
+    <task id="LOCAL-00020" summary="8-28/ V1.0">
+      <option name="closed" value="true" />
+      <created>1724832798510</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1724832798510</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New changelist" />
+    <MESSAGE value="GET ALL field string map to Method" />
+    <MESSAGE value="add recursion" />
+    <MESSAGE value="add MethodString" />
+    <MESSAGE value="MethodLocal" />
+    <MESSAGE value="MethodLocal incomplete" />
+    <MESSAGE value="new client, more Methodlocal" />
+    <MESSAGE value="new RetrofitbuildPoint" />
+    <MESSAGE value="Method Set Field AND the Constant To Filed transfer." />
+    <MESSAGE value="add Interceptor and OKHttpClient find." />
+    <MESSAGE value="add converterFactory and queryJson" />
+    <MESSAGE value="add invokeSetField and cache find and callback" />
+    <MESSAGE value="add LLM Query, more invoke, and others" />
+    <MESSAGE value="cancel some comment line" />
+    <MESSAGE value="add simple return url, add static field,  change arrayRef, add localToClz to methodString, change methodLocal getInvokeValues, and so on" />
+    <MESSAGE value="add methodReturnParamInvoke, retrieve field's value in methodParamInvoke. add url client/clz identify, fix getinvokeExprValues bug." />
+    <MESSAGE value="fix arrayRef param transfer, complete the paramInvoke Transfer." />
+    <MESSAGE value="fix bugs, change the param's string, &#10;optimize the list string" />
+    <MESSAGE value="8-28/ V1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="8-28/ V1.0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/firmproj/client/RetrofitBuildFind.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="143" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/firmproj/base/MethodString.java</url>
+          <line>980</line>
+          <option name="timeStamp" value="188" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/firmproj/base/MethodLocal.java</url>
+          <line>758</line>
+          <option name="timeStamp" value="190" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.UnsupportedOperationException" package="java.lang" />
+          <option name="timeStamp" value="42" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="91" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="103" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="104" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.OutOfMemoryError" package="java.lang" />
+          <option name="timeStamp" value="105" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="179" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="187" />
+        </breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="java-exception">
+          <properties>
+            <option name="caller-filters-enabled" value="true" />
+            <caller-filters>
+              <class-filter pattern="firmproj.base.MethodString" />
+            </caller-filters>
+            <class-filters>
+              <class-filter pattern="firmproj.base.MethodString" />
+            </class-filters>
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.lang.Integer" memberName="value" />
+        <PinnedItemInfo parentTag="soot.SootClass" memberName="name" />
+        <PinnedItemInfo parentTag="java.util.regex.Matcher" memberName="groups" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="FieldToBuildPoint.get(Scene.v().getField(&quot;&lt;com.liesheng.hayloufun.repository.a: com.liesheng.hayloufun.repository.ApiService b&gt;&quot;))" language="JAVA" />
+        <watch expression="findResult.get(&quot;&lt;com.liesheng.hayloufun.repository.a: com.liesheng.hayloufun.repository.ApiService a()&gt;&quot;)" language="JAVA" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/FirmProj$javaAPp.ic" NAME="javaAPp Coverage Results" MODIFIED="1723474098337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
