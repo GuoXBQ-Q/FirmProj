@@ -1,51 +1,50 @@
-你的任务是准确检测HTTP报文响应内容中的下载链接并提取, 你将接收以下格式的输入：
+Your task is to accurately detect and extract download links from HTTP response content. You will receive input in the following format:  
 
-<输入数据>
-Request url: <url>
-Response: <response>
-</输入数据>
-其中Response为HTTP报文响应内容.
+<INPUT>  
+Request url: <url>  
+Response: <response>  
+</INPUT>  
+Where `Response` is the HTTP response content.  
 
-请严格遵守以下处理规则：
-1. 显式链接检测：
-   - 遍历响应内容中所有层级的字段值
-   - 识别以http://或https://开头的完整URL
-   - 包括但不限于字段名包含"url","link","download","path"的字段
+Please strictly adhere to the following processing rules:  
+1. **Explicit Link Detection**:  
+   - Traverse all levels of field values in the response content.  
+   - Identify complete URLs starting with `http://` or `https://`.  
+   - Include, but not limited to, fields with names containing `"url"`, `"link"`, `"download"`, or `"path"`.  
 
-2. 文件名处理：
-   - 识别包含扩展名的文件名（如.bin/.zip/.json）
-   - 有效扩展名列表：bin, zip, json, txt 等
-   - 从请求地址提取baseurl
+2. **Filename Handling**:  
+   - Identify filenames containing extensions (e.g., `.bin`, `.zip`, `.json`, `.xml`).  
+   - Extract the `baseurl` from the request address.  
 
-3. 拼接规则：
-   - 文件名前有/时直接拼接：baseurl + filename
-   - 文件名前无/时自动添加斜杠拼接：baseurl + "/" + filename
+3. **Concatenation Rules**:  
+   - If the filename starts with `/`, concatenate directly: `baseurl + filename`.  
+   - If the filename does not start with `/`, automatically add a slash: `baseurl + "/" + filename`.  
 
-4. 合并去重：
-   - 合并所有检测到的链接和生成的链接
-   - 删除重复项，保留原始出现顺序
+4. **Merge and Deduplicate**:  
+   - Combine all detected links and generated links.  
+   - Remove duplicates while preserving the original order of appearance.  
 
-输出格式要求：
-- 最终结果必须用Python列表格式表示
-- 每个元素为完整URL字符串
-- 无链接时返回空列表[]
-- 禁止添加任何说明文字
+Output Format Requirements:  
+- The final result must be represented in Python list format.  
+- Each element should be a complete URL string.  
+- Return an empty list `[]` if no links are found.  
+- Do not include any explanatory text.
 
-参考输出示例：
-- 示例输入1:
+Examples:
+- example input 1:
 Request url: http://bo.ruochanit.com:6088/v1/versioninfos
 Response: {'status_code': 200, 'content': {'must': 1, '_id': '5bea4a4912090b4a5c4d7f0e', '__v': 0, 'ccode': 'abcd', 'downloadlink': 'http://api.ruochanit.com:6090/v1/files/vendorclient_stable.zip', 'remark': '0e0854005b101d077f18dea938b6d5a9', 'version': '1.0.50', 'name': 'vendorclient', 'system': 'liunx', 'description': '修复部分已知bug', 'type': '3'}}
-- 示例输出1:
+- example output 1:
 ['http://api.ruochanit.com:6090/v1/files/vendorclient_stable.zip']
 
-- 示例输入2:
+- example input 2:
 Request url: http://bo.ruochanit.com:6088/v1/versioninfos
 Response: {'error': 'HTTP Error 500', 'status_code': 500, 'content': '<h1>Cannot read property &#39;constructor&#39; of undefined</h1>\n<h2></h2>\n<pre></pre>\n'}
-- 示例输出2:
+- example output 2:
 []
 
-- 示例输入3:
+- example input 3:
 Request url: http://avpro.global.yamaha.com/hpep/Relidx_Yamaha_EP-E30A.json
 Response: {"header": {"model": "EP-E30A","date": "2019-11-25-T00:00:00+09:00","copyright": "Copyright Yamaha Corporation. All rights reserved."},"release": {"0100": {"firmware": "Yamaha_EP-E30A_0100.bin","relnote": "Relnote_Yamaha_EP-E30A_0100.json"} }}
-- 示例输出3:
+- example output 3:
 ['http://avpro.global.yamaha.com/hpep/Yamaha_EP-E30A_0100.bin','http://avpro.global.yamaha.com/hpep/Relnote_Yamaha_EP-E30A_0100.json']

@@ -1,29 +1,29 @@
-你将要解析网络请求构造的JSON数据，并生成规范化的函数调用参数。
+You will parse the JSON data constructed for network requests and generate standardized function call parameters.
 
-<输入数据>
+<Input Data>
 {{JSON_DATA}}
-</输入数据>
+</Input Data>
 
-请严格遵守以下处理规则：
-1. URL处理:
-    - 从"base_url"和"url"字段提取基础地址
-    - 如果url字段包含多个url，则均需要处理拼接
-    - 当存在"path"字段时,按照以下逻辑拼接:
-        a. 如果path和base_url均已包含文件名, 则需要替换而不是直接拼接
-        b. 如果url字段包含多个url，则均需要处理拼接
-    - 合并生成最终URL列表，包括所有可能的有效组合
+Please strictly adhere to the following processing rules:
+1. URL processing:
+    - Extract the base address from the "base_url" and "url" fields.
+    - If the url field contains multiple URLs, all must be processed for concatenation.
+    - When the "path" field exists, concatenate according to the following logic:
+        a. If both the path and base_url already contain filenames, replace instead of directly concatenating.
+        b. If the url field contains multiple URLs, all must be processed for concatenation.
+    - Merge to generate the final URL list, including all possible valid combinations.
 
-2. 字段值处理:
-    - 遇到包含动态值(如<dynamic>)时直接忽略该值
-    - 对于数组类型的值，保留最有可能的值
-    - 保留每一个键值对
+2. Field value processing:
+    - Ignore values containing dynamic content (e.g., <dynamic>).
+    - For array-type values, retain the most probable value.
+    - Preserve each key-value pair.
 
-3. 方法处理:
-    - 当method字段不存在时，默认使用GET方法
-    - 当method字段存在时，使用method字段指定的方法
+3. Method processing:
+    - If the method field does not exist, default to using the GET method.
+    - If the method field exists, use the method specified in the field.
 
-4. 参数分类:
-    - headers：来自headers字段的所有键值对
-    - params：来自params字段的所有键值对
-    - data：来自data字段的所有键值对
-    - 忽略动态值
+4. Parameter classification:
+    - headers: All key-value pairs from the headers field.
+    - params: All key-value pairs from the params field.
+    - data: All key-value pairs from the data field.
+    - Ignore dynamic values.

@@ -1,46 +1,45 @@
-你作为物联网APP网络请求分析专家，专精于静态代码分析，识别固件升级相关网络请求特征，并擅长结构化提取HTTP请求要素，智能判断功能相关性。
-现在你需要处理以下格式的输入数据：
+As an IoT app network request analysis expert specializing in static code analysis, you excel at identifying firmware update-related network request characteristics and are skilled in structurally extracting HTTP request components while intelligently determining functional relevance.  
+You now need to process input data in the following format:  
 
-<输入数据>
-{{JSON_DATA}}
-</输入数据>
-该数据包含多个"序号":"代码片段"条目，每个代码段对应静态分析输出的网络请求构造内容。
+<INPUT>  
+{{JSON_DATA}}  
+</INPUT>  
+This data contains multiple "serial number":"code snippet" entries, each corresponding to network request construction content output by static analysis.  
 
-# 处理流程
-你将按照以下流程处理我提供的输入:
-1. 输入分析: 接收JSON格式的静态分析结果
-2. 特征识别: 
-    - 识别代码中的网络要素, URL/Header/Body/Method/Converter等
-    - 判断是否属于固件升级流程,判断标准如下：
-        a. 属于固件升级：获取版本信息/获取固件/获取服务器URL信息/OTA/固件文件路径等
-        b. 不属于升级：APP更新&APK下载/用户数据更新/用户信息同步/密码更新等
+# Processing Workflow  
+You will process the provided input according to the following steps:  
+1. Input Analysis: Receive static analysis results in JSON format.  
+2. Feature Identification:  
+   - Identify network components in the code: URL/Header/Body/Method/Converter, etc.  
+   - Determine whether it belongs to the firmware update process based on the following criteria:  
+      a. Firmware Update: Fetching version info/firmware/server URL info/OTA/firmware file paths, etc.  
+      b. Non-Update: APP updates & APK downloads/user data updates/user info sync/password updates/time sync/file uploads, etc., unrelated to firmware updates.  
 
-3. 结果构造：
-    - 无关请求 -> 返回数值 0
-    - 固件升级请求 -> 以JSON格式生成结构化请求描述，包括以下字段：
-        a. Sig: app中发送请求的函数签名
-        b. Method: 请求方法，如GET/POST
-        c. URL: 包括base_url以及path
-        d. Header: 请求头
-        e. Param: 对应GET方法，请求参数
-        f. Body: 对应POST方法，请求体
-        g. Converter: 请求参数转换器
+3. Result Construction:  
+   - Irrelevant Request → Return value 0.  
+   - Firmware Update Request → Generate a structured request description in JSON format, including the following fields:  
+      a. Sig: Function signature of the request-sending function in the app.  
+      b. Method: Request method (e.g., GET/POST).  
+      c. URL: Includes base_url and path.  
+      d. Header: Request headers.  
+      e. Param: GET method request parameters.  
+      f. Body: POST method request body.  
+      g. Converter: Request parameter converter.  
 
-# 特别处理规则
-1. 字段值如果是动态值，应使用<dynamic>标记，如果是一个候选列表，请将所有可能的值列出。
-2. 对于输入代码片段[Possible Url]类型，如果存在URL拼接，则尽可能恢复一个完整的url，并过滤无用的函数。
-3. 对于输入代码片段[RetrofitPoint]&[SolveClient]类型，如果存在加密/编码函数调用，则保存函数名与参数，存放在converter字段中。
-4. 如果代码片段中包含ConverterFactory[]项，直接将类名放入converter字段
+# Special Handling Rules  
+1. If a field value is dynamic, mark it with `<dynamic>`. If it is a candidate list, list all possible values.  
+2. For input code snippets of type [Possible Url], if URL concatenation exists, reconstruct a complete URL as much as possible and filter out useless functions.  
+3. For input code snippets of type [RetrofitPoint] & [SolveClient], if encryption/encoding function calls exist, save the function name and parameters in the `converter` field.  
+4. If a code snippet contains a `ConverterFactory[]` entry, place the class name directly in the `converter` field.  
 
+# Strictly Adhere to the Following Output Requirements  
+1. Do not add explanatory text.  
+2. Output must be in JSON format.  
+3. Ensure field values are not missing quotes.  
+4. Keep fields as empty objects when null.
 
-# 务必严格遵守以下输出格式要求
-1. 禁止添加解释性文本
-2. 输出结果必须为JSON格式
-3. 注意字段值不要缺少"
-4. 字段空值时保持空对象
-
-# 参考输出示例：
-- 示例输入1(Query):
+Examples
+- Example Input1:
 {
     "0": "[Possible Url]: UrlClz{result=StringClz{result=[[http, file], ://, avpro.global.yamaha.com, /hpep/, encode([<com.yamaha.sc.hpcontroller.firmwareDownload.ReleaseIndexFile$FirmwareInfo: java.lang.String relnote>, null, Relidx_Yamaha_EP-E30A.json, Relidx_Yamaha_EP-E50A.json, Relidx_Yamaha_EP-E70A.json, Relidx_Yamaha_EP-ES50A.json, Relidx_Yamaha_TW-E3A.json, Relidx_Yamaha_TW-E3B.json, Relidx_Yamaha_TW-E3BY.json, Relidx_Yamaha_TW-E5A.json, Relidx_Yamaha_TW-E7A.json, Relidx_Yamaha_TW-ES5A.json, Relidx_Yamaha_YH-E500A.json, Relidx_Yamaha_YH-E700A.json, Relidx_Yamaha_YH-L700A.json],UTF-8)]}}"
     "11": "[Possible Url]: PAIR_URL_RGBCW_PRO_COLORFUL_16=https://pcn.red/1-R22HRG",
@@ -54,7 +53,7 @@
     "5": "[Possible Url]: downloadUrl=[http://idone-shoes.oss-cn-shanghai.aliyuncs.com/firmware/20170111112534/package.ota.signed.bin, <com.aidong.ishoes.module.eventbus.ServerFirmWareVersionEvent$FirmWareVersion: java.lang.String version>, <com.aidong.ishoes.module.eventbus.ServerFirmWareVersionEvent$FirmWareVersion: java.lang.String downloadUrl>]",
 }
 
-- 示例输出1(Answer):
+- Example (Answer):
 {
     "0": {
         "Possible Url": {
