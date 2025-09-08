@@ -93,7 +93,7 @@ def save2json(content, json_path):
 # 三个阶段统一传参为 app package name
 def format_url(app_name,dataset):
     # 该函数主要对通过静态分析获取的json格式中的url请求信息进行提取，并返回一个格式化的数据
-    # path_prefix = "/data/guoxb/firmproj"
+    # path_prefix = "/data/firmproj"
     logger.info(f"========== llm phase1 | start process {app_name} ==========")
     phase1_start_time = time.time()
     targetdir_path = os.path.join(result_root_path,dataset,app_name,"llm_preprocess")

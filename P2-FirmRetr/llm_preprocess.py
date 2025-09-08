@@ -57,8 +57,8 @@ possible_extensions = [
     ".imag", ".UPG", ".sit", ".tif", ".lzb",".tar.gz", ".fw", ".dfu", ".eeprom", ".ota", ".e2", ".xx"]
 
 black_extension = [
-    "ttf","jpg","apk","png","js","gif","svg","pdf","7","bwf","BWF","txt","ico_0","ico_0_1","zip_0",
-    "db","asc","js_0","cyacd","exe","tgz","mp4","dls","0","bin_0_1","apk_0","msi"
+    "ttf","jpg","apk","png","js","gif","svg","pdf","7","bwf","BWF","txt","ico_0","ico_0_1",
+    "db","asc","js_0","cyacd","exe","tgz","mp4","dls","0","apk_0","msi"
 ]
 
 FILTER_SET = [

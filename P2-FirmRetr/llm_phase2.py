@@ -142,7 +142,7 @@ def classify_url(app_name, dataset):
     # 1,2,3: 不完整的网络请求
     logger.info(f"========== llm phase2 | start process {app_name} ==========")
     phase2_start_time = time.time()
-    # path_prefix = "/data/guoxb/firmproj/result"
+    # path_prefix = "/data/firmproj/result"
     dir_path = os.path.join(result_root_path,dataset,app_name,'llm_phase1')
     
     # 设置输出目录
@@ -263,7 +263,7 @@ def classify_url(app_name, dataset):
 
 
 if __name__ == "__main__":
-    # applist = os.listdir("/data/guoxb/firmproj/result/IoT-VER-Androzoo")
+    # applist = os.listdir("/data/firmproj/result/IoT-VER-Androzoo")
     applist = os.listdir(os.path.join(result_root_path, process_dataset))
     with ThreadPoolExecutor(max_workers=6) as executor:
         futures = {

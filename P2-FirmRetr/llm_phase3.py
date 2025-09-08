@@ -113,7 +113,7 @@ def download_complete_file(app_name,dataset):
     # 对complete.json文件进行处理的时候，需要提前检查是否是逻辑空的json文件，如果是，则跳过该文件
     logger.info(f"========== llm phase3 | start process {app_name} ==========")
     phase3_start_time = time.time()
-    # path_prefix = "/data/guoxb/firmproj/result"
+    # path_prefix = "/data/firmproj/result"
     dir_path = os.path.join(result_root_path,dataset,app_name,'llm_phase2')
     if not os.path.exists(dir_path):
         logger.info(f"{app_name} llm_phase2 not exists. skip")
