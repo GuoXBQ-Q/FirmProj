@@ -6,4 +6,4 @@ This repository contains the source code for the paper "FirmProj: Automated Dete
 
     The detailed prompts are placed in the prompt directory, and the full LLM workflow code will be updated soon.
 
-Acknowledgment: Our tool is built on [IoT-Flow](https://github.com/SecPriv/iotflow/tree/main).
+Acknowledgment: The implementation of FirmProj is built upon [IoTFlow](https://github.com/SecPriv/iotflow/tree/main).
