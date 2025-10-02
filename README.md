@@ -5,8 +5,8 @@ Wenzhi Li, Jialong Guo, Jiongyi Chen, Fan Li, Yujie Xing, Yanbo Xu, Shishuai Yan
 
 
 
- 1. Dir `P1-ReqRec`: The source code of Value Set Analysis(Etraction of Firmware Update Request)
- 2. Dir `P2-FirmRetr`: The source code of LLM-Guided Firmware Retrieval(Verification of Firmware Request)(**demo**)
+ 1. Dir `P1-ReqRec`: The source code of Value Set Analysis (Etraction of Firmware Update Request)
+ 2. Dir `P2-FirmRetr`: The source code of LLM-Guided Firmware Retrieval (Verification of Firmware Request) (**demo**)
 
     The detailed prompts are placed in the prompt directory, and the full LLM workflow code will be updated soon.
 
